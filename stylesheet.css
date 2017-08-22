@@ -3,3 +3,7 @@
    height: 100px;
    background-color: pink
 }
+body {
+   background-image: url ("imgs\woods.jpg");
+   background-color: grey
+}

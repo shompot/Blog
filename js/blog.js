@@ -15,11 +15,11 @@ $(document).ready (function (){
       bottom: $('#header').offset().top
    });
    // -------BLOG TEXT SET-------
-/*
+
    var text;
    $.get( '../data/blog1.txt', function (){
       text = data;
    } , 'text');
    console.log (text);
-   */
+   
 });

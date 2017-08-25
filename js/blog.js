@@ -16,10 +16,19 @@ $(document).ready (function (){
    });
    // -------BLOG TEXT SET-------
 
-   var text;
-   $.get( '../data/blog1.txt', function (){
-      text = data;
-   } , 'text');
+   $('.blogTextCont').css({
+      height: $('.post').height() - $('.blogTitleCont').height() - parseInt($('.blogTitleCont').css ('marginTop')) - 40,
+      left: 50,
+      marginLeft: $('.blogPic').width() + parseInt($('.blogPic').css('marginLeft')) + parseInt($('.blogTitleCont').css('marginLeft')),
+      marginRight: "25px"
+   });;
+
+   var text ="Picture removal detract earnest is by. Esteems met joy attempt way clothes yet demesne tedious. Replying an marianne do it an entrance advanced. Two dare say play when hold. Required bringing me material stanhill jointure is as he. Mutual indeed yet her living result matter him bed whence. Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its. Rendered far ";
+   $('.blogText').load("random.txt");
    console.log (text);
-   
+
+
+
+
+
 });

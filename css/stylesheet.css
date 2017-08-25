@@ -97,8 +97,9 @@ body {
    display: inline-block;
    //float: left;
    position: relative;
-   margin-top: 25px;
+   margin-top: 15px;
    margin-left: 25px;
+   //background-color: purple;
 }
 .blogTitle {
    font-family: 'Avenir Next',sans-serif;
@@ -106,4 +107,12 @@ body {
 }
 .blogText {
    font-family: 'Avenir Next',sans-serif;
+   color: rgb(180,180,180);
+
+}
+.blogTextCont {
+   //background-color: pink;
+   //position: relative;
+   height: 50px;
+   margin-left: 300px;
 }

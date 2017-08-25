@@ -40,7 +40,7 @@ $(document).ready (function (){
 
       console.log ("New Text: " + text);
       textPromise.then (function (response){
-         $(".blogText").html(response);
+         $(this).html(response);
       });
 
    });

@@ -23,15 +23,21 @@ $(document).ready (function (){
       marginRight: "25px"
    });;
 
-   var text ="In JS now Picture removal detract earnest is by. Esteems met joy attempt way clothes yet demesne tedious. Replying an marianne do it an entrance advanced. Two dare say play when hold. Required bringing me material stanhill jointure is as he. Mutual indeed yet her living result matter him bed whence. Cause dried no solid no an small so still widen. Ten weather evident smiling bed against she examine its. Rendered far ";
-   console.log (text.length);
+   var text ="Blog Text";
    text = text.substring (0, 400) + " ...";
 
-   $.get("data/blog1.txt", function (data){
-      console.log (data);
-      text=data.substring (0, 400)  + " ...";
-   },"text");
-   console.log (text);
-   $(".blogText").html(text);
+   var textPromise = new Promise ( function (resolve, reject){
+      $.get("data/blog1.txt", function (data){
+         text = data.substring (0, 400)  + " ...";
+         console.log ("Inside get: " + text);
+         resolve (text);
+      },"text");
+   });
+
+   console.log ("New Text: " + text);
+   textPromise.then (function (response){
+      $(".blogText").html(response);
+   });
+
 
 });

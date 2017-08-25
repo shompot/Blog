@@ -27,11 +27,11 @@ $(document).ready (function (){
    console.log (text.length);
    $.get("../data/blog1.txt", function (data){
 
-      text=data.substring (0, 400)  + "...";
+      text=data.substring (0, 400)  + " ...";
    },"text");
    console.log (text);
 
-   text = text.substring (0, 400) + "...";
+   text = text.substring (0, 400) + " ...";
 
    $(".blogText").html(text);
 

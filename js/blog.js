@@ -27,7 +27,7 @@ $(document).ready (function (){
 
    var i = 1;
    var text;
-   $.each (".blogText", function (){
+   $(".blogText").each (function (){
       text ="Blog Text Here ...";
 
       var textPromise = new Promise ( function (resolve, reject){

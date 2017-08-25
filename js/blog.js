@@ -14,7 +14,7 @@ $(document).ready (function (){
       width: $('#header').width(),
       bottom: $('#header').offset().top
    });
-   // -------BLOG TEXT SET-------
+   // -------BLOG TEXT CONTAINER---------
 
    $('.blogTextCont').css({
       height: $('.post').height() - $('.blogTitleCont').height() - parseInt($('.blogTitleCont').css ('marginTop')) - 40,
@@ -23,20 +23,26 @@ $(document).ready (function (){
       marginRight: "25px"
    });;
 
-   var text ="Blog Text";
-   text = text.substring (0, 400) + " ...";
+   // -------BLOG TEXT SET-------------
 
-   var textPromise = new Promise ( function (resolve, reject){
-      $.get("data/blog1.txt", function (data){
-         text = data.substring (0, 400)  + " ...";
-         console.log ("Inside get: " + text);
-         resolve (text);
-      },"text");
-   });
+   var i = 1;
+   var text;
+   $.each (".blogText", function (){
+      text ="Blog Text Here ...";
 
-   console.log ("New Text: " + text);
-   textPromise.then (function (response){
-      $(".blogText").html(response);
+      var textPromise = new Promise ( function (resolve, reject){
+         $.get("data/blog1.txt", function (data){
+            text = data.substring (0, 400)  + " ...";
+            console.log ("Inside get: " + text);
+            resolve (text);
+         },"text");
+      });
+
+      console.log ("New Text: " + text);
+      textPromise.then (function (response){
+         $(".blogText").html(response);
+      });
+
    });
 
 

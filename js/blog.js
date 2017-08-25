@@ -28,6 +28,7 @@ $(document).ready (function (){
    text = text.substring (0, 400) + " ...";
 
    $.get("data/blog1.txt", function (data){
+      console.log (data);
       text=data.substring (0, 400)  + " ...";
    },"text");
    console.log (text);

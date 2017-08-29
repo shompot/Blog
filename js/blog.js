@@ -14,17 +14,9 @@ $(document).ready (function (){
    $("#body").append($post);
    $("#body").append($post);
    $("#body").append($post);
-   // -------BLOG TEXT CONTAINER---------
-   $('.blogTextCont').css({
-      height: $('.post').height() - $('.blogTitleCont').height() - parseInt($('.blogTitleCont').css ('marginTop')) - 40,
-      left: 50,
-      marginLeft: $('.blogPic').width() + parseInt($('.blogPic').css('marginLeft')) + parseInt($('.blogTitleCont').css('marginLeft')),
-      marginRight: "25px"
-   });
    // -------BLOG TEXT SET-------------
    var i = 1;
    var text;
-
    text ="Blog Text Here ...";
 
    $(".blogText").each (function (){
@@ -40,18 +32,25 @@ $(document).ready (function (){
       },"text");
    });
 
-   console.log ("New Text: " + text);
-
-   textPromise.then (function (response){
+   textPromise.then (function (response)
+      {
          $(".blogText").each (function (){
             $(this).html(response);
-            console.log ($(this).html(););
+            console.log ($(this).html());
          });
-      }, function(){
+      }, function()
+      {
          $(".blogText").each (function (){
             $(this).html(response);
-      });
-   });
-
-
+         });
+      }
+   );
+   console.log ("New Text: " + text);
+});
+// -------BLOG TEXT CONTAINER---------
+$('.blogTextCont').css({
+   height: $('.post').height() - $('.blogTitleCont').height() - parseInt($('.blogTitleCont').css ('marginTop')) - 40,
+   left: 50,
+   marginLeft: $('.blogPic').width() + parseInt($('.blogPic').css('marginLeft')) + parseInt($('.blogTitleCont').css('marginLeft')),
+   marginRight: "25px"
 });

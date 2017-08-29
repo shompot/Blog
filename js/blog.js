@@ -1,12 +1,7 @@
 $(document).ready (function (){
    // ------------BODY HEIGHT-----------
-   var screenH = $(window).height();
-   var headerH = $("#header").height();
-   var footerH = $("#footer").height();
-   var bodyH = screenH - headerH - footerH - 2*$('#header').offset().top;
-
    $('#body').css ({
-      height: bodyH
+      height: $(window).height() - $("#header").height() - $("#footer").height() - 2*$('#header').offset().top
    });
    // ----------FOOTER POSITION---------
    $('#footer').css({
@@ -14,22 +9,42 @@ $(document).ready (function (){
       width: $('#header').width(),
       bottom: $('#header').offset().top
    });
+   // -----------POSTS CREATION-----------
+   var $post = "<div class='post'><div class='blogPic'></div><div class='blogTitleCont'><h1 class='blogTitle'>Title of Post</h1></div><div class='blogTextCont'><p class='blogText'></p></div></div>";
+   $("#body").append($post);
+   $("#body").append($post);
+   $("#body").append($post);
    // -------BLOG TEXT CONTAINER---------
-
    $('.blogTextCont').css({
       height: $('.post').height() - $('.blogTitleCont').height() - parseInt($('.blogTitleCont').css ('marginTop')) - 40,
       left: 50,
       marginLeft: $('.blogPic').width() + parseInt($('.blogPic').css('marginLeft')) + parseInt($('.blogTitleCont').css('marginLeft')),
       marginRight: "25px"
-   });;
-
+   });
    // -------BLOG TEXT SET-------------
-
    var i = 1;
    var text;
-
    text ="Blog Text Here ...";
 
+   $(".blogText").each (function (){
+      $(this).html(i + " " + text);
+      i++;
+
+      var textPromise = new Promise ( function (resolve, reject){
+         $.get("data/blog1.txt", function (data){
+            text = data.substring (0, 400)  + " ...";
+            console.log ("Inside get: " + text);
+            resolve (text);
+         },"text");
+      });
+      textPromise.then (function (response){
+         $(this).html(response);
+      }, function(){
+         $(this).html(text);
+      });
+
+   });
+   /*
    var textPromise = new Promise ( function (resolve, reject){
       $.get("data/blog1.txt", function (data){
          text = data.substring (0, 400)  + " ...";
@@ -40,22 +55,15 @@ $(document).ready (function (){
 
    console.log ("New Text: " + text);
 
-   $(".blogText").each (function (){
-      /*
-      var textPromise = new Promise ( function (resolve, reject){
-         $.get("data/blog1.txt", function (data){
-            text = data.substring (0, 400)  + " ...";
-            console.log ("Inside get: " + text);
-            resolve (text);
-         },"text");
-      });
-      */
-      textPromise.then (function (response){
-         $(this).html(response);
+   textPromise.then (function (response){
+         $(".blogText").each (function (){
+            $(this).html(response);
+         });
       }, function(){
-         $(this).html(text);
+         $(".blogText").each (function (){
+            $(this).html(response);
       });
    });
-
+   */
 
 });

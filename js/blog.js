@@ -27,9 +27,21 @@ $(document).ready (function (){
 
    var i = 1;
    var text;
-   $(".blogText").each (function (){
-      text ="Blog Text Here ...";
 
+   text ="Blog Text Here ...";
+
+   var textPromise = new Promise ( function (resolve, reject){
+      $.get("data/blog1.txt", function (data){
+         text = data.substring (0, 400)  + " ...";
+         console.log ("Inside get: " + text);
+         resolve (text);
+      },"text");
+   });
+
+   console.log ("New Text: " + text);
+
+   $(".blogText").each (function (){
+      /*
       var textPromise = new Promise ( function (resolve, reject){
          $.get("data/blog1.txt", function (data){
             text = data.substring (0, 400)  + " ...";
@@ -37,12 +49,12 @@ $(document).ready (function (){
             resolve (text);
          },"text");
       });
-
-      console.log ("New Text: " + text);
+      */
       textPromise.then (function (response){
          $(this).html(response);
+      }, function(){
+         $(this).html(text);
       });
-
    });
 
 

@@ -10,6 +10,9 @@ body {
 /*--------------HEADER---------------*/
 #header {
    height: 100px;
+   left: 8px;
+   right: 8px;
+   top: 8px;
    background-color: rgb(80,85,94);
    background-color: rgba(80,85,94,0.5);
    //background-color: green;
@@ -43,9 +46,9 @@ body {
 #footer {
    height: 60px;
    position: absolute;
-   bottom: 0;
-   left: 0;
-   right: 0;
+   bottom: 8px;
+   left: 8px;
+   right:8px;
    background-color: rgb(80,85,94);
    background-color: rgba(80,85,94,0.5);
    //background-color: purple;
@@ -95,7 +98,6 @@ body {
 }
 .blogTitleCont {
    display: inline-block;
-   //float: left;
    position: relative;
    margin-top: 15px;
    margin-left: 25px;
@@ -112,7 +114,7 @@ body {
 }
 .blogTextCont {
    //background-color: pink;
-   //position: relative;
    height: 50px;
-   margin-left: 300px;
+   margin-left: 200px;
+   margin-right: 25px;
 }

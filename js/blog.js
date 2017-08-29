@@ -31,7 +31,7 @@ $(document).ready (function (){
       $(this).html(i + " " + text);
       i++;
    });
-   /*
+
    var textPromise = new Promise ( function (resolve, reject){
       $.get("data/blog1.txt", function (data){
          text = data.substring (0, 400)  + " ...";
@@ -45,12 +45,13 @@ $(document).ready (function (){
    textPromise.then (function (response){
          $(".blogText").each (function (){
             $(this).html(response);
+            console.log ($(this).html(););
          });
       }, function(){
          $(".blogText").each (function (){
             $(this).html(response);
       });
    });
-   */
+
 
 });

@@ -30,20 +30,6 @@ $(document).ready (function (){
    $(".blogText").each (function (){
       $(this).html(i + " " + text);
       i++;
-
-      /*var textPromise = new Promise ( function (resolve, reject){
-         $.get("data/blog1.txt", function (data){
-            text = data.substring (0, 400)  + " ...";
-            console.log ("Inside get: " + text);
-            resolve (text);
-         },"text");
-      });
-      textPromise.then (function (response){
-         $(this).html(response);
-      }, function(){
-         $(this).html(text);
-      });
-*/
    });
    /*
    var textPromise = new Promise ( function (resolve, reject){

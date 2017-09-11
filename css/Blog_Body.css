@@ -1,0 +1,50 @@
+/*--------------BODY---------------*/
+#body {
+   //background-color: pink;
+}
+.post {
+   height: 200px;
+   width: 90%;
+   position: relative;
+   margin-top: 40px;
+   margin-left: 5%;
+   background-color: rgba(80,85,94,0.7)
+}
+.post:last-child {
+   margin-bottom: 40px;
+}
+/*-------------POSTS---------------*/
+.blogPic {
+   background-image: url("../img/post_pic2.jpg");
+   position: relative;
+   margin-top: 25px;
+   margin-left: 25px;
+   height: 150px;
+   width: 150px;
+   background-size: cover;
+   opacity: 0.7;
+   display: inline-block;
+   float: left;
+}
+.blogTitleCont {
+   display: inline-block;
+   position: relative;
+   margin-top: 15px;
+   margin-left: 25px;
+   //background-color: purple;
+}
+.blogTitle {
+   font-family: 'Avenir Next',sans-serif;
+   //font-size:
+}
+.blogText {
+   font-family: 'Avenir Next',sans-serif;
+   color: rgb(180,180,180);
+
+}
+.blogTextCont {
+   //background-color: pink;
+   height: 50px;
+   margin-left: 200px;
+   margin-right: 25px;
+}

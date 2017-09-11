@@ -1,0 +1,8 @@
+body {
+   background: url('../img/going to make2.jpg');
+   background-size: cover;
+   background-color: grey;
+   background-blend-mode: darken;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}

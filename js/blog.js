@@ -1,8 +1,5 @@
 $(document).ready (function (){
-   // ------------BODY HEIGHT-----------
-   $('#body').css ({
-      height: $(window).height() - $("#header").height() - $("#footer").height() - 2*$('#header').offset().top
-   });
+   
    // -----------POSTS CREATION-----------
    var $post = "<div class='post'><div class='blogPic'></div><div class='blogTitleCont'><h1 class='blogTitle'>Title of Post</h1></div><div class='blogTextCont'><p class='blogText'></p></div></div>";
    $("#body").append($post);

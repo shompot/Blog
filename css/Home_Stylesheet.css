@@ -1,0 +1,42 @@
+body {
+   background: url('../img/feet in woods.jpg');
+   background-size: cover;
+   background-color: grey;
+   background-blend-mode: darken;
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+}
+#logo {
+   display: block;
+   margin: auto;
+   position: relative;
+   top: 100px;
+}
+#linkCont{
+   display: flex;
+   justify-content: center;
+   //background-color: blue;
+   margin-left: 30%;
+   margin-right: 30%;
+   margin-top: 13%;
+}
+.linkBox {
+   height: 40px;
+   width: 180px;
+   margin: auto;
+   display: flex;
+   justify-content:center;
+   align-items: center;
+   border-style: solid;
+   border-color: rgb(50,50,50);
+   border-width: thin;
+}
+.linkItems {
+   text-decoration: none;
+   font-family: "Frutiger Neue W02 Thin",Arial,Helvetica,sans-serif;
+   color: pink;
+   font-size: auto;
+}
+.linkItems:hover {
+   color: rgb(180,0,0);
+}

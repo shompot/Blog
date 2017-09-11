@@ -1,0 +1,67 @@
+body {
+}
+/*--------------HEADER---------------*/
+#header {
+   height: 100px;
+   left: 8px;
+   right: 8px;
+   top: 8px;
+   background-color: rgb(80,85,94);
+   background-color: rgba(80,85,94,0.5);
+   //background-color: green;
+}
+#logo {
+   float: left;
+   position: relative;
+   top: 10px;
+   left: 20px;
+}
+#topMenu {
+   float: right;
+   position: relative;
+   top: 45px;
+   right: 20px;
+}
+#topMenuList li {
+   display: inline-block;
+   margin-right: 13px;
+}
+.topMenuItems{
+   color: pink;
+   text-decoration: none;
+   font-family: "Frutiger Neue W02 Thin",Arial,Helvetica,sans-serif;
+
+}
+.topMenuItems:hover{
+   color: #F47983;
+}
+/*--------------FOOTER---------------*/
+#footer {
+   height: 60px;
+   position: absolute;
+   bottom: 8px;
+   left: 8px;
+   right:8px;
+   background-color: rgb(80,85,94);
+   background-color: rgba(80,85,94,0.5);
+   //background-color: purple;
+}
+/*----------SCROLLBAR-----------*/
+#body::-webkit-scrollbar * {
+    background:transparent;
+}
+#body::-webkit-scrollbar
+{
+	width: 12px;
+}
+#body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: grey;
+}
+/*--------------BODY---------------*/
+#body {
+   overflow: auto;
+}
+/*----------------------------------*/
